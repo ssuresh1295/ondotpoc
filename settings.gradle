@@ -1,0 +1,1 @@
+include ':app', ':maths', ':learn', ':combine', ':school', ':math'
