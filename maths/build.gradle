@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 android {
     compileSdkVersion 28
 
@@ -20,34 +21,40 @@ android {
         }
     }
 
-    ext {
-        bintrayRepo = 'maven'
-        bintrayName = 'demo-lib'
 
-        publishedGroupId = 'com.example.maths'
-        libraryName = 'maths'
-        artifact = 'demo-lib'
 
-        libraryDescription = 'Maths Library'
 
-        siteUrl = 'https://github.com/ssuresh1295/ondotpoc'
-        gitUrl = 'https://github.com/ssuresh1295/ondotpoc.git'
+}
 
-        libraryVersion = '1.0.0'
+ext {
+    bintrayRepo = 'demolibrary'
+    bintrayName = 'demo-lib'
 
-        developerId = 'ssuresh1295'
-        developerName = 'Suresh Kumar'
-        developerEmail = 's.suresh1295@gmail.com'
+    publishedGroupId = 'com.example.maths'
+    libraryName = 'maths'
+    artifact = 'demo-lib'
 
-        licenseName = 'The Apache Software License, Version 2.0'
-        licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-        allLicenses = ["Apache-2.0"]
+    libraryDescription = 'Maths Library'
+
+    siteUrl = 'https://github.com/ssuresh1295/ondotpoc'
+    gitUrl = 'https://github.com/ssuresh1295/ondotpoc.git'
+
+    libraryVersion = '1.0.1'
+
+    developerId = 'ssuresh1295'
+    developerName = 'Suresh Kumar'
+    developerEmail = 's.suresh1295@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+bintray {
+    pkg {
+        userOrg = 'suresh1295'
+        override = true
     }
-
-    publish{
-
-    }
-
 }
 
 dependencies {
@@ -56,7 +63,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.inthecheesefactory.thecheeselibrary:fb-like:0.9.3'
 
 }
 

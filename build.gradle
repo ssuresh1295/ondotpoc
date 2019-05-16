@@ -5,6 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+        mavenCentral()
 
     }
     dependencies {
@@ -21,6 +22,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://suresh1295.bintray.com/demolibrary'
+        }
     }
 }
 
